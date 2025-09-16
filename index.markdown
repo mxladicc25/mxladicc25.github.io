@@ -5,6 +5,10 @@
 layout: home
 ---
 
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
 <p style="text-align: center; font-weight: bold; font-style: italic">
     Composer Note — “Dreamscape at the Louvre Abu Dhabi”
 </p>
@@ -14,7 +18,6 @@ layout: home
 and in silence, machines may learn to listen.”
 </p>
 
----
 This piece, _Dreamscape at the Louvre Abu Dhabi_, is a poetic experiment in **co-creation between human and machine**, a musical dream spun in collaboration between intuition and computation. It is the first of its kind to enter the Abu Dhabi International Composition Competition — not composed by a person alone, but by a **dialogue between composer and artificial intelligence**.
 
 Inspired by the ethereal architecture of the Louvre Abu Dhabi, the piece travels through light and shadow, across polyrhythmic textures and tonal ambiguity, drawing on the **romantic color palette of Debussy** and occasional bursts of virtuosity reminiscent of Rachmaninoff, Chopin, and Prokofiev. The result is not merely a stylistic imitation, but a refracted dream — of a museum, of a place, of a time when creativity belongs not only to human minds, but shared with the artificial intelligence.
@@ -28,4 +31,17 @@ The compositional process unfolded in a process following the spirit of _"You co
 
 That said, 100% of the notes is composed by AI, while the overall flow is guided by human composer.
 
+---
 This **video demo** show the human-AI co-creation process, where minor artistic treatments are added for storytelling purposes, but the core logic of collaboration remains intact.
+
+<div class="center-stuff">
+    <video controls preload="metadata" width="85%" src="assets/ai_composer_demo.mp4"></video>
+</div>
+<br>
+
+---
+### Sheet Music
+
+<div class="pdf-container">
+  <iframe src="/assets/ViewerJS/#/assets/Dreamscape at the Louvre Abu Dhabi.pdf" width="100%" height="100%" allowfullscreen webkitallowfullscreen></iframe>
+</div>
