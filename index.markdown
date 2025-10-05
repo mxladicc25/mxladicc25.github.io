@@ -4,9 +4,11 @@
 
 layout: home
 ---
-
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/hover.min.js"></script>
 </head>
 
 <p style="text-align: center; font-weight: bold; font-style: italic">
@@ -39,9 +41,69 @@ This **video demo** show the human-AI co-creation process, where minor artistic 
 </div>
 <br>
 
+Here is the full music audio from the video:
+<div class="audio_wrapper">
+<button id="play_btn_full_demo" class="play_btn">▶</button>
+<div id="waveform_full_demo" class="waveform"></div>
+</div>
+<script>
+    let currentPlayingAudio = null;
+    let currentPlayingBtn = null;
+    
+    function stopPlaying() {
+    if (currentPlayingAudio !== null) {
+    currentPlayingAudio.pause();
+    currentPlayingBtn.textContent = '▶'
+    }
+    currentPlayingAudio = null;
+    currentPlayingBtn = null;
+    }
+    
+    const wavesurfer = WaveSurfer.create({
+    container: `#waveform_full_demo`,
+    waveColor: '#B1B1B1',
+    progressColor: '#F6B094',
+    barWidth: 2,
+    interact: true,
+    pixelRatio: 1,
+    height: 40,
+    cursorWidth: 2,
+    cursorColor: "red",
+    url: "/assets/demo_audio.mp3",
+    plugins: [
+    WaveSurfer.Hover.create({
+    lineColor: '#ff0000',
+    lineWidth: 2,
+    labelBackground: '#555',
+    labelColor: '#fff',
+    labelSize: '11px',
+    }),
+    ],
+    });
+    wavesurfer.on('finish', () => {
+    if (currentPlayingAudio !== null) {
+    currentPlayingBtn.textContent = '▶'
+    }
+    currentPlayingAudio = null;
+    currentPlayingBtn = null;
+    });
+    let btnEle = document.getElementById("play_btn_full_demo");
+    btnEle.addEventListener("click", function () {
+    if (btnEle.textContent === "▶") {
+    stopPlaying();
+    btnEle.textContent = '◼';
+    wavesurfer.play();
+    currentPlayingAudio = wavesurfer;
+    currentPlayingBtn = btnEle;
+    } else {
+    stopPlaying();
+    }
+    });
+</script>
+<br>
+
 ---
 ### Sheet Music
-
 <div class="pdf-container">
-  <iframe src="/assets/ViewerJS/#/assets/Dreamscape at the Louvre Abu Dhabi.pdf" width="100%" height="100%" allowfullscreen webkitallowfullscreen></iframe>
+  <iframe src="/assets/ViewerJS/#/assets/Dreamscape_at_the_Louvre_Abu_Dhabi.pdf" width="100%" height="100%" allowfullscreen webkitallowfullscreen></iframe>
 </div>

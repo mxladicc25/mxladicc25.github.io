@@ -44,3 +44,20 @@
 .textLayer {
     color: #000 !important;             /* 确保文字渲染为黑色 */
 }
+
+.waveform {
+    width: 100%;
+    font-size: 12px;
+}
+
+.play_btn {
+    width: 40px;
+    height: 40px;
+}
+
+.audio_wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 2px; /* 按钮和容器之间的间距 */
+}
